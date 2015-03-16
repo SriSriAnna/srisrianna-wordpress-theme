@@ -1,0 +1,23 @@
+{
+  "name": "srisri",
+  "version": "1.0",
+  "description": "Sri Sri Website",
+  "moduleType": [
+    "globals"
+  ],
+"dependencies": {
+    "foundation": "zurb/bower-foundation"
+},
+  "authors": [
+    "Thiru"
+  ],
+  "license": "MIT",
+  "homepage": "http://srisrianna.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
