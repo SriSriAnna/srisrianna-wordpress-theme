@@ -1,0 +1,227 @@
+body {
+    background-color: #303F9F;
+    font-family: 'Roboto Condensed', serif;
+    background-image: -webkit-linear-gradient(top,#3F51B5,#303F9F);
+}
+
+div, section {
+    //outline: 1px dashed red;
+}
+
+@media only screen and (min-width: 40.063em) { 
+    #wrap {
+        margin: 15px auto;
+        -webkit-box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.55);
+        -moz-box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.55);
+        box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.55);
+        border: 0.05em solid #000;
+        max-width: 1026px;
+
+    }
+    .row {
+        max-width: 1026px;
+    }
+    
+    .img-srisri {
+        width:145px;
+        box-shadow:  0 0 20px  rgba(238,238,221,0.6);
+        -moz-box-shadow: 0 0 20px  rgba(238,238,221,0.6);
+        -webkit-box-shadow: 0 0 20px  rgba(238,238,221,0.6);
+        -o-box-shadow: 0 0 20px  rgba(238,238,221,0.6);
+        border-radius:100px;
+        float:left;
+    }    
+
+    .img-feather {
+        background-image: url("../img/peacock-feather.png"); 
+        float: left;
+    }
+    
+    header {
+        background-color: #1976D2;
+        padding: 0;
+        margin: 0;
+        height: 150px;
+        background-image: url("../img/krishna-yashoda.png");
+        background-repeat: no-repeat;
+        background-position: right;
+    }    
+    header h2, header h3 {
+        margin-left: 200px;
+    }      
+}
+
+@media only screen and (min-width: 64em) { /* min-width 1025px, large screens */
+    #wrap {
+        margin: 15px auto;
+        -webkit-box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.55);
+        -moz-box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.55);
+        box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.55);
+        border: 0.05em solid #000;
+        max-width: 1026px;
+
+    }
+    .row {
+        max-width: 1026px;
+    }
+    
+    .img-srisri {
+        width:145px;
+        box-shadow:  0 0 20px  rgba(238,238,221,0.6);
+        -moz-box-shadow: 0 0 20px  rgba(238,238,221,0.6);
+        -webkit-box-shadow: 0 0 20px  rgba(238,238,221,0.6);
+        -o-box-shadow: 0 0 20px  rgba(238,238,221,0.6);
+        border-radius:100px;
+        float:left;
+    }    
+
+    .img-feather {
+        background-image: url("../img/peacock-feather.png"); 
+        float: left;
+    }
+    
+    header {
+        background-color: #1976D2;
+        padding: 0;
+        margin: 0;
+        height: 150px;
+        background-image: url("../img/krishna-yashoda.png");
+        background-repeat: no-repeat;
+        background-position: right;
+    }    
+    header h2, header h3 {
+        margin-left: 200px;
+    }  
+} 
+
+header {
+    background-color: #1976D2;
+    padding: 0;
+    margin: 0;
+}   
+
+header h2, header h3 {
+    color: #fff;
+    text-shadow: 1px 2px 0.1em black;//, 0 0 1em blue, 0 0 0.2em blue;
+}    
+
+header h3 {
+    font-style: italic;
+}   
+header h2 small, header h3 small {
+    color: #fff;
+    text-shadow: 1px 2px 0.1em black;//, 0 0 1em blue, 0 0 0.2em blue;
+} 
+
+#wrap {
+    background-color: #fff;
+    border: 1px solid rgba(7, 123, 166, 1.0);
+}
+
+#menu-default {
+    background-color: #2196F3;
+    margin: 0px;
+    height: 35px;
+}
+
+#menu-default li {
+    list-style: none;
+    float: left;
+}
+
+#menu-default a {
+    display: block;
+    color:white;
+    float: left;
+    padding: 5px 15px;    
+    text-transform: uppercase;
+}
+
+#menu-default a:hover, #menu-default a:active, #menu-default a:focus {
+    color:#1976D2;;
+    background-color: #fff;
+    box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.2), -0.06em -0.09em 0.011em rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+a:hover .box-shadow {
+    box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.8), -0.06em -0.09em 0.011em rgba(0, 0, 0, 0.8); 
+    cursor: context-menu;
+}
+
+a i.ion-email {
+    vertical-align: middle;
+    margin: 10px 5px;
+}
+
+a:hover i.ion-email:before {
+    content: "\f422";
+}
+.section-title i {
+    padding-right: 5px;
+}
+
+.widget-section {
+    background-color: #fff;
+    margin: 10px 0px;
+    box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.2), -0.06em -0.09em 0.011em rgba(0, 0, 0, 0.1);    
+}
+
+.section-title {
+    background-color: rgba(234, 234, 234, 1.0);
+    padding: 5px 10px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.section-content {
+    padding: 5px;    
+}
+
+.section-content p, .section-content address {
+    padding: 0px 5px;    
+}
+
+div.section-content ul li {
+    margin-left: 5px;
+}
+
+div.section-content dl dt {
+    font-style: italic;
+    padding: 10px;
+}
+
+div.section-content dl dd {
+    padding: 10px 10px 0px 10px;
+}
+
+footer {
+    background-color: white;    
+    color: #2196F3;    
+    box-shadow: -0em -0.1em 0.05em rgba(0, 0, 0, 0.3);    
+}
+
+footer a:link, footer a:visited, footer a:active {
+    color: green;
+}
+
+footer a:hover {
+    color: red;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul, footer p {
+    margin: 10px 5px;
+}
+div.main {
+    background-color: rgb(216, 207, 203);
+}
+
+.size-24 {
+    font-size: 24px;
+}
