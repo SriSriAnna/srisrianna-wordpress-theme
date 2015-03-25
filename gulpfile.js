@@ -56,7 +56,7 @@ gulp.task('sass', function() {
         .pipe(prefix(
             "last 1 version", "> 1%", "ie 8", "ie 7"
         ))
-        .pipe(minifycss())
+        //.pipe(minifycss())
         .pipe(gulp.dest('build/assets/css'))
         //.pipe(filter('build/assets/css/*.css')) // Filtering stream to only css files
         .pipe(browserSync.reload({stream:true}));
