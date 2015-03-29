@@ -44,7 +44,7 @@ gulp.task('twig', function() {
 
 // Compile Sass
 gulp.task('sass', function() {
-    gulp.src(['assets/scss/main.scss'])
+    gulp.src(['assets/scss/main.scss', '!**/.DS_Store'])
         .pipe(plumber())
         .pipe(sass({
             includePaths: ['bower_components/foundation/scss',
@@ -77,9 +77,9 @@ gulp.task('uglify', function() {
 
 // Compress images
 gulp.task('imagemin', function() {
-    gulp.src(paths.images)
+    gulp.src(paths.images, ['!**/.DS_Store'])
         .pipe(plumber())
-        .pipe(imagemin())
+        //.pipe(imagemin())
         .pipe(gulp.dest('build/assets/img'));
 });
 
@@ -108,7 +108,7 @@ gulp.task('listen', function() {
 gulp.task('watch', function(event) {
     gulp.watch('**/*.twig', ['twig', browserSync.reload]);
     gulp.watch('assets/scss/*.scss', ['sass', browserSync.reload]);
-    gulp.watch(paths.images, ['imagemin', browserSync.reload]);
+    //gulp.watch(paths.images, ['imagemin', browserSync.reload]);
     gulp.watch(paths.fonts, ['copyFonts', browserSync.reload]);
     gulp.watch(paths.scripts, ['uglify', browserSync.reload]);
 });

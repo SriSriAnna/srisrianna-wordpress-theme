@@ -1,6 +1,10 @@
 @import "normalize";
+@import "colors";
+@import "mixins";
+@import "theme-brown";
 @import "settings";
-@import "foundation/settings";
+@import "foundation/components/global";
+@import "style";
 @import "foundation/components/block-grid";
 @import "foundation/components/clearing";
 @import "foundation/components/forms";
@@ -10,5 +14,4 @@
 @import "foundation/components/thumbs";
 @import "foundation/components/top-bar";
 @import "foundation/components/visibility";
-@import "style";
 @import "ionicons";
