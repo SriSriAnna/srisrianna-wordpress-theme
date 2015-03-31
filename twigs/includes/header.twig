@@ -1,0 +1,25 @@
+<div class="top-bar-container">
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1> <a href="{{ wp.home_url }}" rel="nofollow">{{ wp.bloginfo('name') }}</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+                <a href="#"><span>Menu</span></a>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+        {% if wp.has_nav_menu('primary_navigation') %}
+            {{ wp.wp_nav_menu({
+                'theme_location':'primary_navigation',
+                'walker': wp.returnObject('wp_foundation_navwalker'),
+                'container':false,
+                'depth':5,
+                'menu_class' : 'top-bar-menu left',
+                'fallback_cb':false
+            }) }}
+        {% endif %}
+        </section>
+    </nav>
+</div>
+<hr />
