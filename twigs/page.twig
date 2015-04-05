@@ -1,11 +1,7 @@
-{% extends 'layouts/base.twig' %}
+{% extends 'layouts/sidebar.twig' %}
 
 {% block content %}
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-            {% for post in posts() %}{{ the_post(post) }}
-                {% include 'content/content-page.twig' %}
-            {% endfor %}
-        </main><!-- #main -->
-    </div><!-- #primary -->
+      {% for post in posts() %}{{ the_post(post) }}
+          {% include 'content/content-page.twig' %}
+      {% endfor %}
 {% endblock %}

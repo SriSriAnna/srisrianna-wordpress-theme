@@ -69,11 +69,11 @@ gulp.task('sass', function() {
       "last 1 version", "> 1%", "ie 8", "ie 7"
     ))
     //.pipe(minifycss())
-    .pipe(gulp.dest('build/assets/css'))
+    .pipe(gulp.dest('build/assets/css'));
     //.pipe(filter('build/assets/css/*.css')) // Filtering stream to only css files
-    .pipe(browserSync.reload({
+/*    .pipe(browserSync.reload({
       stream: true
-    }));
+    }));*/
 });
 
 // Uglify JS
@@ -81,9 +81,9 @@ gulp.task('uglify', function() {
   gulp.src(paths.scripts)
     .pipe(plumber())
     //.pipe(browserify())
-    .pipe(uglify({
-      outSourceMap: false
-    }))
+    //.pipe(uglify({
+    //  outSourceMap: false
+    //}))
     .pipe(concat("main.js"))
     .pipe(gulp.dest('build/assets/js'))
 
@@ -109,22 +109,38 @@ gulp.task('listen', function() {
   browserSync({
     server: {
       baseDir: "./build/"
-    }
+    },
   });
+});
+
+gulp.task('wait', function(end) {
+  //wait(5000);
+  end();
+});
+
+gulp.task('reload', function() {
+  browserSync.reload();
+});
+
+gulp.task('refresh-sass', function() {
+  setTimeout(function reload() {
+    runSequence('wait', 'sass', 'reload');
+      }, 5000);
 });
 
 // Watch files
 gulp.task('watch', function(event) {
-  gulp.watch('**/*.twig', ['twig', browserSync.reload]);
-  gulp.watch('assets/scss/*.scss', ['sass', browserSync.reload]);
+  gulp.watch(['twigs/**','**/*.twig'],
+    [browserSync.reload]);
+  gulp.watch('assets/scss/*.scss', ['refresh-sass']);
   //gulp.watch(paths.images, ['imagemin', browserSync.reload]);
-  gulp.watch(paths.fonts, ['copyFonts', browserSync.reload]);
+  //gulp.watch(paths.fonts, ['copyFonts', browserSync.reload]);
   gulp.watch(paths.scripts, ['uglify', browserSync.reload]);
 });
 
 gulp.task('default', function(callback) {
-  runSequence('clean', ['sass',
-      'twig',
+  runSequence('wait', 'clean', ['sass',
+      //'twig',
       'imagemin',
       'copyFonts',
       'uglify'

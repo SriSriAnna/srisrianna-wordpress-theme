@@ -1,16 +1,171 @@
-{% extends 'layouts/sidebar.twig' %}
+{% extends 'layouts/base.twig' %}
 
 {% block content %}
-    {% for post in posts() %} {{ the_post(post) }}
-        {% include 'content/content-excerpt.twig' %}
-        <hr/>
-    {% endfor %}
-    {% if posts() is empty %}
-        {% include 'content/content-none.twig' %}
-    {% endif %}
-    {% include 'includes/paging.twig' %}
-{% endblock %}
-
-{% block sidebar %}
-    {% set sidebar = wp.dynamic_sidebar('primary') %}
+<div class="home-main">
+  <div class="row" data-equalizer>
+   <section class="small-12 large-6 medium-6 columns" >
+     <div class="widget-section" data-equalizer-watch>
+         <div class="section-title"><i class="ion-speakerphone"></i>Announcements</div>
+      <div class="section-content announcement">
+         <ul class="example-orbit" data-orbit>
+           {% for post in posts({ 'category_name': 'showcase'}) %}
+             {{ the_post(post) }}
+             {% if wp.has_post_thumbnail %}
+               <li>
+                 {{ wp.the_post_thumbnail('wpsf-featured') }}
+                 <div class="orbit-caption">
+                   {{ wp.the_title }}
+                 </div>
+               </li>
+             {% endif %}
+           {% endfor %}
+         </ul>
+      </div>
+    </div>
+   </section>
+   <section class="small-12 large-6 medium-6 columns">
+     <div class="widget-section latest-posts" data-equalizer-watch>
+      <div class="section-title"><i class="ion-ios-compose"></i>Latest Posts</div>
+      <div class="section-content ellipses">
+       <ul>
+         {% for post in posts({'posts_per_page': 5}) %}{{ the_post(post) }}
+         <li><a href="{{ wp.the_permalink }}">{{ wp.the_title }}</a></li>
+         {% endfor %}
+        </ul>
+      </div>
+      <div class="section-title"><i class="ion-email"></i>Subscribe for News</div>
+      <div class="section-content subscribe">
+         <form action="http://srisrianna.us7.list-manage2.com/subscribe/post?u=22d9e6eb35a769d1c7a0e03db&amp;id=27011330a0"
+               method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+               class="validate" target="_blank" novalidate="">
+           <div class="row collapse prefix-radius">
+             <div class="small-2 medium-1 large-1 columns">
+               <span class="prefix"><i class="ion-email size-24"></i></span>
+             </div>
+             <div class="small-8 medium-10 large-10 columns">
+               <input type="text" placeholder="Enter your E-Mail...">
+             </div>
+             <div class="small-2 medium-1 large-1 columns">
+               <input type="submit" value="Go" class="button postfix" >
+             </div>
+           </div>
+          </form>
+      </div>
+     </div>
+   </section>
+  </div>
+  <div class="row" data-equalizer>
+   <section class="small-12 large-6 medium-6 columns">
+     <div class="widget-section" data-equalizer-watch>
+      <div class="section-title"><i class="ion-ios-book"></i>Vaishnava Samhita: Vol. I, Book 1</div>
+      <div class="section-content vaishnava-samhita">
+       <span>Chapter 1, Sloka 36</span>
+       <dl>
+         <dt>
+             Mandah Sumandamatayo Mandabhagyah Kalau Narah
+             Tasmat Nashaknuvantyeva Vidhatum Niyaman Bahoon.
+         </dt>
+         <dd>
+             People born in this Kaliyuga are lazy, slow-witted and unfortunate. Hence they will not come forward to observe the various kinds of strict austerities.
+         </dd>
+       </dd>
+      </div>
+     </div>
+   </section>
+   <section class="small-12 large-6 medium-6 columns">
+     <div class="widget-section upadesa-mozhigal" data-equalizer-watch>
+      <div class="section-title"><i class="ion-quote"></i>உபதேச மொழிகள்</div>
+      <div class="section-content">
+       <p>
+         <span>850.</span>சின்னக் குழந்தை நம்மை சம்பந்தமில்லாத கேள்விகளை ஓயாமல் கேட்டுக் கொண்டேவரும். அதை நிறுத்த வழி என்ன தெரியுமா? நாம் பதில் சொல்லுவதைவிட்டு அந்தக் குழந்தையைக் கேள்விகள் கேட்க ஆரம்பித்து விடவேண்டும். அதுபோல் நம்மிடம் தர்க்கம் செய்ய வருபவர்கள் பல கேள்விகளை சம்பந்தமில்லாது கேட்டுத் துன்புறுத்தினால் நாம் விடையே கூறக்கூடாது. நமக்கு ஒன்றுமே தெரியாத முட்டாளாகாப் பாவித்துக் கொள்ள தெரியவேண்டும். பிறகு நாமே அவரை சந்தேகம் கேட்க ஆரம்பித்துவிட வேண்டும்.
+       </p>
+      </div>
+     </div>
+   </section>
+  </div>
+  <div class="row" data-equalizer>
+   <section class="small-12 large-6 medium-6 columns">
+     <div class="widget-section" data-equalizer-watch>
+      <div class="section-title"><i class="ion-android-calendar"></i>Upcoming Events</div>
+      <div class="section-content">
+           <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=thiru.in_tlj82qbginp8i2mrk7qgi20eos%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+        <p
+      </div>
+     </div>
+   </section>
+   <section class="small-12 large-6 medium-6 columns">
+     <div class="widget-section" data-equalizer-watch>
+         <div class="section-title"><i class="ion-ios-book"></i>பாகவத தர்மம்</div>
+      <div class="section-content bhagavatha-dharmam">
+       <p>பாகவததர்மம் பத்திரிக்கை வேண்டுவோர் வருஷாந்திர சந்தா தொகை ரூ 200/- நேரடியாக ஶ்ரீரங்கம் ஶ்ரீஶ்ரீ பிரஸ் விலாசத்திற்கோ, பரனூரிலோ, சென்னை இராயப்பேட்டை ப்ரேமிக வித்யா கேந்திரத்திலோ பணம் செலுத்தி ரசீது பெற்றுக்கொள்ளலாம்.</p>
+       <p><a href="/bhagavatha-dharmam">மேலும் விவரங்களுக்கு</a></p>
+      </div>
+     </div>
+   </section>
+  </div>
+  <div class="row" data-equalizer>
+   <section class="small-12 large-6 medium-6 columns">
+     <div class="widget-section" data-equalizer-watch>
+      <div class="section-title"><i class="ion-images"></i>Gallery</div>
+      <div class="section-content gallery">
+         <ul class="clearing-thumbs small-block-grid-2 medium-block-grid-3 large-block-grid-4"
+             data-clearing>
+           {% for post in posts({ 'post_type': 'attachment',
+                                  'posts_per_page': 8,
+                                  'post_parent': null,
+                                  'numberposts': 8}) %}
+              {{ the_post(post) }}
+           <li>
+             {{ wp.the_attachment_link(post.ID, false) }}
+             <!-- {{ wp.the_title }} -->
+           </li>
+           {% endfor %}
+         </ul>
+      </div>
+     </div>
+   </section>
+   <section class="small-12 large-6 medium-6 columns">
+     <div class="widget-section" data-equalizer-watch>
+      <div class="section-title"><i class="ion-android-cart"></i>Get Books/Audio/Videos</div>
+      <div class="section-content shop">
+         <p>Bhakthas who would like to get Sri Sri Anna’s audio, books can get from the follow locations.</p>
+          <ul class="shop-orbit-content" data-orbit>
+           <li data-orbit-slide="location-1">
+             <div>
+               <h4>Sri Hari Traders</h4>
+               <address>
+                9, Moorthy Street <br />
+                West Mambalam, Chennai- 600 033 <br />
+                Contact: Suresh Battar <br />
+                <a href="mailto:sriharitraders108@gmail.com"><i class="ion-email size-24"></i>sriharitraders108@gmail.com</a>
+               </address>
+             </div>
+           </li>
+           <li data-orbit-slide="location-2">
+             <div>
+               <h4>Sri Krishna Premamrutham Trust</h4>
+               <address>
+                New.No 7, Old.No 4, Avvai Shanumgam I lane<br />
+                Royapettah, Chennai- 600 014 <br />
+                <a href="tel:044.28112748">Ph:044.28112748</a> <br />
+               </address>
+             </div>
+           </li>
+           <li data-orbit-slide="location-3">
+             <div>
+               <h4>Sri Krishna Premamrutham Trust</h4>
+               <address>
+                Agraharam Street, <br />
+                Paranur Village & Post, (VIA) Mugaiyur <br />
+                Villupuram Dist, Pin: 605755 <br />
+                <a href="tel:9443481860">Ph: 944 348 1860</a> <br />
+               </address>
+             </div>
+           </li>
+         </ul>
+      </div>
+    </div>
+   </section>
+  </div>
+ </div>
 {% endblock %}

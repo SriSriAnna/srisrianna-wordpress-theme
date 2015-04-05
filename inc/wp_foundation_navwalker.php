@@ -17,12 +17,12 @@ class wp_foundation_navwalker extends Walker_Nav_Menu {
 		$item_html = '';
 		parent::start_el( $item_html, $object, $depth, $args );
 
-		$output .= ( $depth == 0 ) ? '<li class="divider"></li>' : '';
+		//$output .= ( $depth == 0 ) ? '<li class="divider"></li>' : '';
 
 		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
 
 		if( in_array('label', $classes) ) {
-			$output .= '<li class="divider"></li>';
+			//$output .= '<li class="divider"></li>';
 			$item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '<label>$1</label>', $item_html );
 		}
 

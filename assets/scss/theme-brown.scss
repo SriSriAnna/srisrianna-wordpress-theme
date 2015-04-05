@@ -19,6 +19,9 @@ $topbar-link-color-hover: $color-brown-dark;
 $topbar-link-color-active: $color-brown-dark;
 $topbar-link-color-active-hover: $color-brown-dark;
 
+$topbar-link-bg-active: $text-color;
+$topbar-link-bg-active-hover: $text-color;
+
 $home-bg-color: rgb(216, 207, 203);
 
 $home-widget-header-bg-color: rgba(234, 234, 234, 1.0);
@@ -26,6 +29,7 @@ $home-widget-header-color: $color-brown-dark;
 $home-widget-bg-color: white;
 
 $orbit-caption-bg: rgba($color-brown, 0.8);
+$orbit-timer-show-progress-bar: false;
 $anchor-font-color : $color-brown;
 $body-font-color : $color-brown;
 
@@ -36,7 +40,7 @@ $footer-link-hover-color: $home-bg-color;
 
 $content-bg-color: rgb(216, 207, 203);
 $content-text-color: $color-brown;
-    
+
 $sidebar-bg-color: $content-bg-color;
 $sidebar-color: $color-brown;
 $header-font-color : $color-brown;

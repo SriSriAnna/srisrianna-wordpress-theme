@@ -30,9 +30,9 @@ function sprig_widgets_init() {
     'name'          => __('Primary', 'sprig'),
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
+    'after_widget'  => '</div></section>',
+    'before_title'  => '<h5 class="widgettitle">',
+    'after_title'   => '</h5><div class="textwidget">',
   ));
 }
 add_action('widgets_init', 'sprig_widgets_init');

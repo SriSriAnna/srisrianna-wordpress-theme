@@ -8,15 +8,12 @@ function sprig_scripts() {
 	* Read the asset names from assets-manifest.json
 	*/
 	$assets = array(
-		'vendor-css'      => '/dist/css/vendor.css',
-		'css'             => '/dist/css/main.css',
-		'vendor-js'       => '/dist/js/vendor.js',
-		'js'              => '/dist/js/main.js'
+		'css'             => '/build/assets/css/main.css',
+		'js'              => '/build/assets/js/main.js'
 	);
 
-	wp_enqueue_style('sprig_vendor_css', get_template_directory_uri() . $assets['vendor-css'], false, null);
-	wp_enqueue_style('sprig_css', get_template_directory_uri() . $assets['css'], false, null);
-	wp_enqueue_script('sprig_vendor_js', get_template_directory_uri() . $assets['vendor-js'], array(), null, true);
+	wp_enqueue_style('sprig_css', get_template_directory_uri() . $assets['css'], false, 
+		filemtime( get_template_directory() . $assets['css']));
 	wp_enqueue_script('sprig_js', get_template_directory_uri() . $assets['js'], array(), null, true);
 
 	if (is_single() && comments_open() && get_option('thread_comments')) {

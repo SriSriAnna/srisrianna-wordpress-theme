@@ -1,25 +1,34 @@
-<div class="top-bar-container">
-    <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-            <li class="name">
-                <h1> <a href="{{ wp.home_url }}" rel="nofollow">{{ wp.bloginfo('name') }}</a></h1>
-            </li>
-            <li class="toggle-topbar menu-icon">
-                <a href="#"><span>Menu</span></a>
-            </li>
-        </ul>
-        <section class="top-bar-section">
-        {% if wp.has_nav_menu('primary_navigation') %}
-            {{ wp.wp_nav_menu({
-                'theme_location':'primary_navigation',
-                'walker': wp.returnObject('wp_foundation_navwalker'),
-                'container':false,
-                'depth':5,
-                'menu_class' : 'top-bar-menu left',
-                'fallback_cb':false
-            }) }}
-        {% endif %}
-        </section>
-    </nav>
+<header class="row">
+  <div class="large-12 medium-12 small-12 columns">
+    <img src="{{wp.get_template_directory_uri}}/assets/img/srisri.png" class="show-for-medium-up img-srisri"/>
+      <h1>
+        <a href="/">ஶ்ரீ ஶ்ரீ அண்ணா <small>(க்ருஷ்ண ப்ரேமி)</small></a>
+      </h1>
+      <h3 class="show-for-medium-up"><small>ஹரே ராமா ஹரே ராமா ராம ராம ஹரே ஹரே <br />
+          ஹரே க்ருஷ்ணா ஹரே க்ருஷ்ணா க்ருஷ்ண க்ருஷ்ணா ஹரே ஹரே</small></h3>
+  </div>
+  <div class="clearfix"></div>
+</header>
+<div class="contain-to-grid sticky">
+ <nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  </ul>
+  <section class="top-bar-section">
+  {% if wp.has_nav_menu('primary_navigation') %}
+      {{ wp.wp_nav_menu({
+          'theme_location':'primary_navigation',
+          'walker': wp.returnObject('wp_foundation_navwalker'),
+          'container':false,
+          'depth':5,
+          'menu_class' : 'top-bar-menu left',
+          'fallback_cb':false
+      }) }}
+  {% endif %}
+   <div class="tools size-24">
+    <a href="/feed"><i class="size-24 ion-social-rss"></i></a>
+    <a href="/upcoming-events"><i class="size-24 ion-android-calendar"></i></a>
+   </div>
+  </section>
+ </nav>
 </div>
-<hr />
